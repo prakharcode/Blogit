@@ -20,7 +20,7 @@ entry_tags=db.Table('entry_tags',
 
 class User(db.Model):
     id = db.Column(db.Integer,primary_key = True)
-    email = db.Column(db.String(6), unique = True)
+    email = db.Column(db.String(64), unique = True)
     password_hash = db.Column(db.String(255))
     name = db.Column(db.String(64))
     slug = db.Column (db.String(64),unique = True)
