@@ -1,0 +1,40 @@
+html,body,.container{
+  height:100%;
+}
+body{
+  background-color: #eee9e9;
+  background-image: url(image/city-cars-traffic-lights-large.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.navbar{
+  top:20px;
+  background-color: transparent;
+  border: 0px;
+}
+
+.navbar a{
+  transition: font-size 300ms ease-in-out,border-bottom 200ms ease-in-out;
+}
+.navbar a:hover{
+  font-size: 18px;
+  border-bottom: 5px solid green;
+}
+.back{
+  position: relative;
+  top:30%;
+  color: white;
+  background-color:rgba(0,0,0,0.3);
+  padding: 20px;
+
+}
+footer{
+  color: white;
+}
+hr{
+background-color: black;
+margin-top: 32px;
+}
+.in{
+  background-color: rgba(0,0,0,0.6);
+}

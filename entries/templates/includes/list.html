@@ -1,0 +1,7 @@
+{% for entry in object_list.items %}
+{% if entry.status != 0: %}
+<p><a href="{{ url_for('entries.detail', slug=entry.slug) }}">{{entry.title }}</a></p>
+{%elif entry.status == entry.draft and g.user == entry.author:%}
+<p><a href="{{ url_for('entries.detail', slug=entry.slug) }}">{{entry.title }}- [DRAFT]</a></p>
+{%endif%}
+{% endfor %}

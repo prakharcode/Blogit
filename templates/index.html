@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{%block extra_style%}<link href="{{ url_for('static' ,filename = 'css/indexstyle.css')}}" rel = "stylesheet">
+{%endblock%}
+{% block content_title %}{% endblock %}
+{% block content %}
+<div class="back text-center">
+<h1 >Welcome, Bloggers!</h1>
+
+<p >Let's get started!
+    <a href="{{ url_for('login') }}"><button class="btn btn-primary">Login </button></a> and give your artistic thoughts a new canvas!
+
+</p>
+</div>
+{% endblock %}

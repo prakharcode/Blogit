@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ entry.title }}- {% endblock %}
+{% block content_title %}{{ entry.title }}
+
+
+{% endblock %}
+{% block sidebar %}
+<div class="col-md-3">
+ <ul class="well nav nav-list">
+   <li><h4>Tags</h4></li>
+{% for tag in entry.tags %}
+    <li><a href="{{ url_for('entries.tag_detail', slug=tag.slug)}}">{{ tag.name }}</a></li>
+{% endfor %}
+</div>
+   </ul>
+{% endblock %}
+{% block content %}
+<p>{{ entry.body }}</p>
+<p>Published By- {{username}} [ {{ entry.created_timestamp.strftime('%d/%m/%Y')}} ]</p>
+{%if g.user == entry.author %}
+<a href="{{ url_for('entries.edit', slug = entry.slug) }}"><button class ="btn btn-primary">Edit</button></a>
+<a href="{{ url_for('entries.delete', slug = entry.slug) }}"><button class ="btn btn-primary">Delete</button></a>
+{%endif%}
+{%endblock%}
